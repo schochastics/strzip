@@ -2,4 +2,4 @@
 
 export(smaz_compress)
 export(smaz_decompress)
-useDynLib(Rsmaz, .registration=T)
+useDynLib(strzip, .registration=T)

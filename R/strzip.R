@@ -1,12 +1,12 @@
-#' @title SMAZ
-#' @name Rsmaz
-#' @useDynLib Rsmaz, .registration=T
+#' @title strzip
+#' @name strzip
+#' @useDynLib strzip, .registration=T
 "_PACKAGE"
 
 #' Compress a string using SMAZ algorithm
 #'
-#' @param input A character string to compress.
-#' @return A raw vector containing the compressed data.
+#' @param input A character vector string to compress.
+#' @return A list of raw vectors containing the compressed data.
 #' @export
 smaz_compress <- function(input) {
     if (!is.character(input)) stop("Input must be a character vector")
@@ -15,8 +15,8 @@ smaz_compress <- function(input) {
 
 #' Decompress a raw vector using SMAZ algorithm
 #'
-#' @param input A raw vector to decompress.
-#' @return A character string containing the decompressed data.
+#' @param input A list of raw vectors to decompress.
+#' @return A character vector of strings containing the decompressed data.
 #' @export
 smaz_decompress <- function(input) {
     if (!is.list(input) || !all(sapply(input, is.raw))) stop("Input must be a list of raw vectors")
