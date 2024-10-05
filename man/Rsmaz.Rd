@@ -6,9 +6,17 @@
 \alias{Rsmaz}
 \title{SMAZ}
 \description{
-What the package does (one paragraph).
+This package wraps the SMAZ C library. Smaz is a simple compression library suitable for compressing very short strings.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/schochastics/Rsmaz}
+  \item Report bugs at \url{https://github.com/schochastics/Rsmaz/issues}
+}
+
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: David Schoch \email{david@schochastics.net} (\href{https://orcid.org/0000-0003-2952-4812}{ORCID})
 
 }

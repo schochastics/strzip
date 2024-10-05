@@ -4,8 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("David", "Schoch", , "david@schochastics.net", role = c("aut", "cre"),
            comment = c(ORCID = " 0000-0003-2952-4812"))
-Description: This package wraps the SMAZ C library. Smaz is a simple compression library suitable for compressing very short
-strings.
+Description: This package wraps the SMAZ C library. Smaz is a simple compression library suitable for compressing very short strings.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
