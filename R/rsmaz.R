@@ -9,10 +9,8 @@
 #' @return A raw vector containing the compressed data.
 #' @export
 smaz_compress <- function(input) {
-    if (!is.character(input) || length(input) != 1) {
-        stop("Input must be a single string.")
-    }
-    .Call(smaz_compress_R, input)
+    if (!is.character(input)) stop("Input must be a character vector")
+    .Call("smaz_compress_R", input)
 }
 
 #' Decompress a raw vector using SMAZ algorithm
@@ -21,8 +19,6 @@ smaz_compress <- function(input) {
 #' @return A character string containing the decompressed data.
 #' @export
 smaz_decompress <- function(input) {
-    if (!is.raw(input)) {
-        stop("Input must be a raw vector.")
-    }
-    .Call(smaz_decompress_R, input)
+    if (!is.list(input) || !all(sapply(input, is.raw))) stop("Input must be a list of raw vectors")
+    .Call("smaz_decompress_R", input)
 }
