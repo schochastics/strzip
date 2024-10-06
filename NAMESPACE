@@ -2,4 +2,8 @@
 
 export(smaz_compress)
 export(smaz_decompress)
+export(unishox2_compress)
+export(unishox2_compress_vector)
+export(unishox2_decompress)
+export(unishox2_decompress_vector)
 useDynLib(strzip, .registration=T)
