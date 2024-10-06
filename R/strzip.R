@@ -5,22 +5,22 @@
 
 #' Compress a string using SMAZ algorithm
 #'
-#' @param input A character vector string to compress.
+#' @param x A character vector string to compress.
 #' @return A list of raw vectors containing the compressed data.
 #' @export
-smaz_compress <- function(input) {
-    if (!is.character(input)) stop("Input must be a character vector")
-    .Call("smaz_compress_R", input)
+smaz_compress <- function(x) {
+    if (!is.character(x)) stop("x must be a character vector")
+    .Call("smaz_compress_R", x)
 }
 
 #' Decompress a raw vector using SMAZ algorithm
 #'
-#' @param input A list of raw vectors to decompress.
+#' @param x A list of raw vectors to decompress.
 #' @return A character vector of strings containing the decompressed data.
 #' @export
-smaz_decompress <- function(input) {
-    if (!is.list(input) || !all(sapply(input, is.raw))) stop("Input must be a list of raw vectors")
-    .Call("smaz_decompress_R", input)
+smaz_decompress <- function(x) {
+    if (!is.list(x) || !all(sapply(x, is.raw))) stop("x must be a list of raw vectors")
+    .Call("smaz_decompress_R", x)
 }
 
 #' Compress a vector of strings using Unishox2
