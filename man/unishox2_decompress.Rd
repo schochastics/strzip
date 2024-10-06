@@ -17,6 +17,5 @@ This function decompresses each string in a compressed character vector that was
 }
 \examples{
 compressed_vec <- unishox2_compress(c("Hello", "world", "Unishox2"))
-decompressed_vec <- unishox2_decompress(compressed_vec)
-print(decompressed_vec)
+unishox2_decompress(compressed_vec)
 }

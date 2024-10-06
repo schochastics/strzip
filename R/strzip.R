@@ -7,6 +7,9 @@
 #'
 #' @param x A character vector string to compress.
 #' @return A list of raw vectors containing the compressed data.
+#' @examples
+#' compressed_lst <- smaz_compress(c("Hello", "world", "smaz"))
+#' smaz_decompress(compressed_lst)
 #' @export
 smaz_compress <- function(x) {
     if (!is.character(x)) stop("x must be a character vector")
@@ -17,6 +20,9 @@ smaz_compress <- function(x) {
 #'
 #' @param x A list of raw vectors to decompress.
 #' @return A character vector of strings containing the decompressed data.
+#' @examples
+#' unishox2_compress(c("Hello", "world", "Unishox2"))
+
 #' @export
 smaz_decompress <- function(x) {
     if (!is.list(x) || !all(sapply(x, is.raw))) stop("x must be a list of raw vectors")
@@ -30,8 +36,8 @@ smaz_decompress <- function(x) {
 #' @param x A character vector of strings to be compressed.
 #' @return A character vector of compressed strings.
 #' @examples
-#' compressed_vec <- unishox2_compress(c("Hello", "world", "Unishox2"))
-#' print(compressed_vec)
+#' unishox2_compress(c("Hello", "world", "Unishox2"))
+#'
 #' @export
 unishox2_compress <- function(x) {
     .Call("unishox2_compress_R", x)
@@ -45,8 +51,7 @@ unishox2_compress <- function(x) {
 #' @return A character vector of decompressed strings.
 #' @examples
 #' compressed_vec <- unishox2_compress(c("Hello", "world", "Unishox2"))
-#' decompressed_vec <- unishox2_decompress(compressed_vec)
-#' print(decompressed_vec)
+#' unishox2_decompress(compressed_vec)
 #' @export
 unishox2_decompress <- function(x) {
     .Call("unishox2_decompress_R", x)

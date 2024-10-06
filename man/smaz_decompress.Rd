@@ -4,14 +4,17 @@
 \alias{smaz_decompress}
 \title{Decompress a raw vector using SMAZ algorithm}
 \usage{
-smaz_decompress(input)
+smaz_decompress(x)
 }
 \arguments{
-\item{input}{A list of raw vectors to decompress.}
+\item{x}{A list of raw vectors to decompress.}
 }
 \value{
 A character vector of strings containing the decompressed data.
 }
 \description{
 Decompress a raw vector using SMAZ algorithm
+}
+\examples{
+unishox2_compress(c("Hello", "world", "Unishox2"))
 }

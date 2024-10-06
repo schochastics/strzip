@@ -16,6 +16,6 @@ A character vector of compressed strings.
 This function compresses each string in a vector using the Unishox2 compression algorithm.
 }
 \examples{
-compressed_vec <- unishox2_compress(c("Hello", "world", "Unishox2"))
-print(compressed_vec)
+unishox2_compress(c("Hello", "world", "Unishox2"))
+
 }

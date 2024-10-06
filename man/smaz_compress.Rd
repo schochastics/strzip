@@ -4,14 +4,18 @@
 \alias{smaz_compress}
 \title{Compress a string using SMAZ algorithm}
 \usage{
-smaz_compress(input)
+smaz_compress(x)
 }
 \arguments{
-\item{input}{A character vector string to compress.}
+\item{x}{A character vector string to compress.}
 }
 \value{
 A list of raw vectors containing the compressed data.
 }
 \description{
 Compress a string using SMAZ algorithm
+}
+\examples{
+compressed_lst <- smaz_compress(c("Hello", "world", "smaz"))
+smaz_decompress(compressed_lst)
 }
