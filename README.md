@@ -3,6 +3,8 @@
 
 # strzip
 
+*(This package is experimental and should not be used)*
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/schochastics/strzip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/strzip/actions/workflows/R-CMD-check.yaml)
