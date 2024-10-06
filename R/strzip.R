@@ -30,11 +30,11 @@ smaz_decompress <- function(input) {
 #' @param x A character vector of strings to be compressed.
 #' @return A character vector of compressed strings.
 #' @examples
-#' compressed_vec <- unishox2_compress_vector(c("Hello", "world", "Unishox2"))
+#' compressed_vec <- unishox2_compress(c("Hello", "world", "Unishox2"))
 #' print(compressed_vec)
 #' @export
-unishox2_compress_vector <- function(x) {
-    .Call("unishox2_compress_vector_R", x)
+unishox2_compress <- function(x) {
+    .Call("unishox2_compress_R", x)
 }
 
 #' Decompress a vector of strings using Unishox2
@@ -44,10 +44,10 @@ unishox2_compress_vector <- function(x) {
 #' @param x A character vector of compressed strings to be decompressed.
 #' @return A character vector of decompressed strings.
 #' @examples
-#' compressed_vec <- unishox2_compress_vector(c("Hello", "world", "Unishox2"))
-#' decompressed_vec <- unishox2_decompress_vector(compressed_vec)
+#' compressed_vec <- unishox2_compress(c("Hello", "world", "Unishox2"))
+#' decompressed_vec <- unishox2_decompress(compressed_vec)
 #' print(decompressed_vec)
 #' @export
-unishox2_decompress_vector <- function(x) {
-    .Call("unishox2_decompress_vector_R", x)
+unishox2_decompress <- function(x) {
+    .Call("unishox2_decompress_R", x)
 }
