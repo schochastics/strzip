@@ -5,8 +5,10 @@ Authors@R:
     c(person("David", "Schoch", , "david@schochastics.net", role = c("aut", "cre"),
            comment = c(ORCID = " 0000-0003-2952-4812")),
       person("Salvatore", "Sanfilippo", role = "cph",
-           comment = "Author of SMAZ library"))
-Description: This package wraps the SMAZ C library. Smaz is a simple compression library suitable for compressing very short strings.
+           comment = "Author of SMAZ library"),
+      person("Arundale", "Ramanathan", role = "cph",
+           comment = "Author of Unishox2 library"))
+Description: This package implements short string compression algorithms.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
