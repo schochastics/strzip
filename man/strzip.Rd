@@ -6,13 +6,13 @@
 \alias{strzip}
 \title{strzip}
 \description{
-This package wraps the SMAZ C library. Smaz is a simple compression library suitable for compressing very short strings.
+This package implements short string compression algorithms.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/schochastics/Rsmaz}
-  \item Report bugs at \url{https://github.com/schochastics/Rsmaz/issues}
+  \item \url{https://github.com/schochastics/strzip}
+  \item Report bugs at \url{https://github.com/schochastics/strzip/issues}
 }
 
 }
@@ -22,6 +22,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item Salvatore Sanfilippo (Author of SMAZ library) [copyright holder]
+  \item Arundale Ramanathan (Author of Unishox2 library) [copyright holder]
 }
 
 }
