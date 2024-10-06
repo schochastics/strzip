@@ -12,7 +12,9 @@
 #' @export
 str_compress_raw <- function(x) {
     if (!is.character(x)) stop("x must be a character vector")
-    .Call("smaz_compress_R", x)
+    res <- .Call("smaz_compress_R", x)
+    class(res) <- c("strzip_raw", class(x))
+    res
 }
 
 #' Decompress a raw vector using SMAZ algorithm
@@ -24,8 +26,11 @@ str_compress_raw <- function(x) {
 #' str_decompress_raw(compressed_lst)
 #' @export
 str_decompress_raw <- function(x) {
-    if (!is.list(x) || !all(sapply(x, is.raw))) stop("x must be a list of raw vectors")
-    .Call("smaz_decompress_R", x)
+    if (inherits(x, "strzip_raw")) {
+        .Call("smaz_decompress_R", x)
+    } else {
+        stop("not a raw compressed string")
+    }
 }
 
 #' Compress a vector of strings using Unishox2
@@ -35,11 +40,14 @@ str_decompress_raw <- function(x) {
 #' @param x A character vector of strings to be compressed.
 #' @return A character vector of compressed strings.
 #' @examples
-#' str_compress_uni(c("Hello", "world", "Unishox2"))
+#' str_compress(c("Hello", "world", "Unishox2"))
 #'
 #' @export
-str_compress_uni <- function(x) {
-    .Call("unishox2_compress_R", x)
+str_compress <- function(x) {
+    if (!is.character(x)) stop("x must be a character vector")
+    res <- .Call("unishox2_compress_R", x)
+    class(res) <- c("strzip", class(x))
+    res
 }
 
 #' Decompress a vector of strings using Unishox2
@@ -49,9 +57,13 @@ str_compress_uni <- function(x) {
 #' @param x A character vector of compressed strings to be decompressed.
 #' @return A character vector of decompressed strings.
 #' @examples
-#' compressed_vec <- str_compress_uni(c("Hello", "world", "Unishox2"))
-#' str_decompress_uni(compressed_vec)
+#' compressed_vec <- str_compress(c("Hello", "world", "Unishox2"))
+#' str_decompress(compressed_vec)
 #' @export
-str_decompress_uni <- function(x) {
-    .Call("unishox2_decompress_R", x)
+str_decompress <- function(x) {
+    if (inherits(x, "strzip")) {
+        return(.Call("unishox2_decompress_R", x))
+    } else {
+        stop("not a compressed string.")
+    }
 }
