@@ -74,7 +74,7 @@ format.strzip <- function(x, ...) {
 #' @export
 summary.strzip <- function(object, type = "mean", ...) {
     uncompressed <- str_decompress(object)
-    rates <- sapply(object, .lraw, USE.NAMES = FALSE) / sapply(uncompressed, .lraw, USE.NAMES = FALSE)
+    rates <- 1 - sapply(object, .lraw, USE.NAMES = FALSE) / sapply(uncompressed, .lraw, USE.NAMES = FALSE)
     if (type == "all") {
         cat("Individual compression rates:\n")
         cat(round(rates, 2), "\n", sep = "\n")

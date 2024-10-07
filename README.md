@@ -3,12 +3,12 @@
 
 # strzip
 
-*(This package is experimental and should not be used)*
-
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/schochastics/strzip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/strzip/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
+
+*(This package is experimental and should not be used)*
 
 In general compression utilities such as zip, gzip do not compress short
 strings well and often expand them. `strzip` wraps two short string
@@ -86,7 +86,7 @@ compressed
 #> <compressed string of length 100>
 
 summary(compressed, type = "summary")
-#> Minimal compression rate: 0.57 
-#> Maximal compression rate: 0.88 
-#> Average compression rate: 0.67
+#> Minimal compression rate: 0.12 
+#> Maximal compression rate: 0.43 
+#> Average compression rate: 0.33
 ```
